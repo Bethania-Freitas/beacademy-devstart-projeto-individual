@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class EnsaioController extends Controller
 {
     public function index(){
-        echo('ENSAIO');
+        return view('ensaio/ensaio');
     }
 }

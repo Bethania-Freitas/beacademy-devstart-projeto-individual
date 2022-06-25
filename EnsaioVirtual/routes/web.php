@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home/home');
 });
 
 Route::get('/login', [\App\Http\Controllers\LoginController::class, 'index'])->name('login.index');
-Route::get('/ensaio', [\App\Http\Controllers\LoginController::class, 'index'])->name('ensaio.index');
-Route::get('/show', [\App\Http\Controllers\LoginController::class, 'index'])->name('show.index');
-Route::get('/setlist', [\App\Http\Controllers\LoginController::class, 'index'])->name('setlist.index');
+Route::get('/ensaio', [\App\Http\Controllers\EnsaioController::class, 'index'])->name('ensaio.index');
+Route::get('/show', [\App\Http\Controllers\ShowController::class, 'index'])->name('show.index');
+Route::get('/setlist', [\App\Http\Controllers\SetlistController::class, 'index'])->name('setlist.index');
 

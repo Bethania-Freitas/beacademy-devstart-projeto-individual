@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class SetlistController extends Controller
 {
     public function index(){
-        echo('SETLIST');
+        return view('setlist/setlist');
     }
 }
