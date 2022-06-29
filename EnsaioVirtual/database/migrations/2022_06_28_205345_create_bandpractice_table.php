@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('band_practice', function (Blueprint $table) {
+        Schema::create('bandpractice', function (Blueprint $table) {
             $table->id();
             $table->date('Data');
-            $table->float('Custo');
+            $table->time('Hora');
             $table->string('Local');
-            $table->string('Mapa');
+            $table->float('Custo');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('band_practice');
+        Schema::dropIfExists('bandpractice');
     }
 };
