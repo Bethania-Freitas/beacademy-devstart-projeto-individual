@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\BandPractice>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class BandPracticeFactory extends Factory
+class RehearsalFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,7 +18,7 @@ class BandPracticeFactory extends Factory
     {
         return [
             'Data' => $this->faker->date(),
-            'Hora' => $this->faker->time(),
+            'Hora' => $this->faker->date(),
             'Local' => $this->faker->streetAddress(),
             'Custo' => 100
         ];

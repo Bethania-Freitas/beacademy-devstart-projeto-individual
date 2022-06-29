@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Show;
+//use Illuminate\Http\Request;
 
 class ShowController extends Controller
 {
-    public function index(){
-        return view('show/show');
+    public function index()
+    {
+        $shows = Show::all();
+
+        return view('show.show', compact('shows'));
     }
 }

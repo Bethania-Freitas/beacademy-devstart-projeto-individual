@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('bandpractice', function (Blueprint $table) {
+        Schema::create('rehearsal', function (Blueprint $table) {
             $table->id();
             $table->date('Data');
-            $table->time('Hora');
+            $table->date('Hora');
             $table->string('Local');
             $table->float('Custo');
             $table->timestamps();
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bandpractice');
+        Schema::dropIfExists('rehearsal');
     }
 };
