@@ -1,1 +1,1 @@
-Login
+@extends('_partials/head')

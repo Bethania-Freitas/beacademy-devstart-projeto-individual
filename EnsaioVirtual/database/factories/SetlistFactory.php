@@ -17,7 +17,7 @@ class SetlistFactory extends Factory
     public function definition()
     {
         return [
-            'Nome da Musica' => $this->faker->name(),
+            'Musica' => $this->faker->name(),
             'Interprete' => $this->faker->name(),
             'Link' => 'https://www.youtube.com/watch?v=fPO76Jlnz6c&list=RDfPO76Jlnz6c&start_radio=1',
             'Seleção'=> true,

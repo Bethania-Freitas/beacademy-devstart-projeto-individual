@@ -1,1 +1,1 @@
-home
+@extends('_partials/head')

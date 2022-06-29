@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('setlists', function (Blueprint $table) {
             $table->id();
-            $table->string('Nome da Musica');
+            $table->string('Musica');
             $table->string('Interprete');
             $table->string('Link');
             $table->boolean('Seleção');
