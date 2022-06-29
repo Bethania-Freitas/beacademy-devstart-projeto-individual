@@ -15,5 +15,5 @@ class Rehearsal extends Model
         'Local',
         'Custo',
     ];
-    protected $table = "Rehearsal";
+    protected $table = "rehearsal";
 }

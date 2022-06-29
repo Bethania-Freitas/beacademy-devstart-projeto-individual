@@ -12,7 +12,7 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [\App\Http\Controllers\LoginController::class, 'index'])->name('login.list');
-Route::get('/rehearsal', [\App\Http\Controllers\RehearsalController::class, 'index'])->name('rehearsal.list');
 Route::get('/show', [\App\Http\Controllers\ShowController::class, 'index'])->name('show.list');
 Route::get('/setlist', [\App\Http\Controllers\SetlistController::class, 'index'])->name('setlist.list');
+Route::get('/rehearsal', [\App\Http\Controllers\RehearsalController::class, 'index'])->name('rehearsal.list');
 
