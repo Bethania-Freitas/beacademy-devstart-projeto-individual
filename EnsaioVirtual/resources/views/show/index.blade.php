@@ -1,10 +1,10 @@
 @extends('_partials/head')
 @section('title', 'Próximos Shows')
 @section('body')
-    <div class='container text-center'>
+    <div class='container'>
         <h1>Lista de Shows</h1>
-
-        <table class="table">
+        <a href="{{ route('show.create') }}" class="btn btn-dark">Novo Show</a>
+        <table class="table text-center">
         <thead>
             <tr>
             <th scope="col">ID</th>

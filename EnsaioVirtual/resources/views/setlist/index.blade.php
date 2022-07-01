@@ -3,7 +3,7 @@
 @section('body')
     <div class='container'>
         <h1>Set List</h1>
-
+        <a href="{{ route('setlist.create') }}" class="btn btn-dark">Incluir Música</a>
         <table class="table">
         <thead class="text-center">
             <tr>

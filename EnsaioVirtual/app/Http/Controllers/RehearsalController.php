@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class RehearsalController extends Controller
 {
+    public function __construct(Rehearsal $rehearsal)
+    {
+        $this->model = $rehearsal;
+    }
+
     public function index()
     {
         $rehearsals = rehearsal::all();
@@ -28,11 +33,9 @@ class RehearsalController extends Controller
 
     public function store(Request $request)
     {
-        $rehearsal = new Rehearsal();
-        $rehearsal->Data = $request->Data;
-        $rehearsal->Local = $request->Local;
-        $rehearsal->Custo = $request->Custo;
-        $rehearsal->save();
+        $data = $request->all();
+
+        $this->model->create($data);
 
         return redirect()->route('rehearsal.index');
 

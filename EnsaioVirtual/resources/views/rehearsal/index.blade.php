@@ -3,7 +3,7 @@
 @section('body')
     <div class='container'>
         <h1>Agenda de Ensaios</h1>
-
+        <a href="{{ route('rehearsal.create') }}" class="btn btn-dark">Novo Ensaio</a>
         <table class="table">
         <thead class="text-center">
             <tr>

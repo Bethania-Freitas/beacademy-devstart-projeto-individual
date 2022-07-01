@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class SetlistController extends Controller
 {
+    public function __construct(setlist $setlist)
+    {
+        $this->model = $setlist;
+    }
+
     public function index()
     {
         $setlists = Setlist::all();
