@@ -11,6 +11,15 @@ class ShowController extends Controller
     {
         $shows = Show::all();
 
-        return view('show.show', compact('shows'));
+        return view('show.index', compact('shows'));
     }
+
+    public function show($id)
+    {
+        $show = Show::findOrFail($id);
+
+        return view('show.show', compact('show'));
+    }
+
+
 }

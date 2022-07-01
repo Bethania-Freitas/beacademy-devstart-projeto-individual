@@ -11,6 +11,12 @@ class RehearsalController extends Controller
     {
         $rehearsals = rehearsal::all();
 
-        return view('rehearsal.rehearsal', compact('rehearsals')) ;
+        return view('rehearsal.index', compact('rehearsals')) ;
+    }
+    public function show($id)
+    {
+        $rehearsal = rehearsal::findOrFail($id);
+
+        return view('rehearsal.show', compact('rehearsal'));
     }
 }

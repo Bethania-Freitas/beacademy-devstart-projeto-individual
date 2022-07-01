@@ -11,6 +11,12 @@ class SetlistController extends Controller
     {
         $setlists = Setlist::all();
 
-        return view('setlist.setlist', compact('setlists')) ;
+        return view('setlist.index', compact('setlists')) ;
+    }
+    public function show($id)
+    {
+        $setlist = Setlist::findOrFail($id);
+
+        return view('setlist.show', compact('setlist'));
     }
 }
