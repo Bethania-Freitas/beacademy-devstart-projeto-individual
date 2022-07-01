@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Show;
-//use Illuminate\Http\Request;
+use Illuminate\Http\Request;
+
+
 
 class ShowController extends Controller
 {
@@ -21,5 +23,22 @@ class ShowController extends Controller
         return view('show.show', compact('show'));
     }
 
+    public function create()
+    {
+        return view('show.create');
+    }
+
+    public function store(Request $request)
+    {
+        $show = new Show();
+        $show->Data = $request->Data;
+        $show->Local = $request->Local;
+        $show->Cidade = $request->Cidade;
+        $show->Formato = $request->Formato;
+        $show->Cachê = $request->Cachê;
+        $show->save();
+
+        return redirect()->route('show.index');
+    }
 
 }

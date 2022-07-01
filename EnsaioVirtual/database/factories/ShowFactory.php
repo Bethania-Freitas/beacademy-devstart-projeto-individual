@@ -17,11 +17,10 @@ class ShowFactory extends Factory
     public function definition()
     {
         return [
-            'data' => $this->faker->date(),
-            'local' =>$this->faker->streetAddress(),
-            'cidade' => $this->faker->city(),
+            'Data' => $this->faker->date(),
+            'Local' =>$this->faker->streetAddress(),
+            'Cidade' => $this->faker->city(),
             'Formato' => $this->faker->name(),
-            'Nome Contratante' => $this->faker->name(),
             'Cachê' => 100,
         ];
     }

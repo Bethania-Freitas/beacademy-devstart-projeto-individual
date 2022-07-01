@@ -1,14 +1,14 @@
 @extends('_partials/head')
 @section('title', 'Detalhe do Show')
 @section('body')
-    <div class='container'>
+    <div class='container  text-center'>
         <h1>Show {{ $show->Local }}</h1>
 
         <table class="table">
         <thead class="text-center">
             <tr>
             <th scope="col">ID</th>
-            <th scope="col">Data</th>
+            <th scope="col">Data e Hora</th>
             <th scope="col">Local</th>
             <th scope="col">Cidade</th>
             <th scope="col">Formato</th>
@@ -22,7 +22,7 @@
 
                 <tr>
                     <th scope="row">{{ $show->id }}</th>
-                    <td>{{ date('d/m/Y', strtotime($show->Data)) }}</td>
+                    <td>{{ date('d/m/Y H:m', strtotime($show->Data)) }}</td>
                     <td>{{ $show->Local }}</td>
                     <td>{{ $show->Cidade }}</td>
                     <td>{{ $show->Formato }}</td>

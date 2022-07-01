@@ -1,0 +1,23 @@
+@extends('_partials/head')
+@section('title', 'Incluir Musica')
+@section('body')
+<div class="container">
+    <h1>Cadastrar Musica</h1>
+    <form action="{{ route('setlist.store')}}" method="POST">
+    @csrf
+        <div class="mb-3">
+            <label for="Musica" class="form-label">Nome da Musica</label>
+            <input type="text" class="form-control" id="Musica" name="Musica" aria-describedby="Musica">
+        </div>
+        <div class="mb-3">
+            <label for="Interprete" class="form-label">Interprete</label>
+            <input type="text" class="form-control" id="Interprete" name="Interprete" aria-describedby="Interprete">
+        </div>
+        <div class="mb-3">
+            <label for="Link" class="form-label">Link</label>
+            <input type="link" class="form-control" id="Link" name="Link" aria-describedby="Link">
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+@endsection

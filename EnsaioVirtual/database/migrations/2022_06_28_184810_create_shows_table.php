@@ -15,11 +15,10 @@ return new class extends Migration
     {
         Schema::create('shows', function (Blueprint $table) {
             $table->id();
-            $table->date('Data');
+            $table->dateTime('Data');
             $table->string('Local');
             $table->string('Cidade');
             $table->string('Formato');
-            $table->string('Nome Contratante');
             $table->float('Cachê');
             $table->timestamps();
         });
