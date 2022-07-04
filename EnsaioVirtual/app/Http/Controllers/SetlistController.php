@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Setlist;
 use Illuminate\Http\Request;
+use App\Http\Requests\SetListRequest;
 
 class SetlistController extends Controller
 {
@@ -31,13 +32,43 @@ class SetlistController extends Controller
         return view('setlist.create');
     }
 
-    public function store(Request $request)
+    public function store(SetListRequest $request)
     {
         $setlist = new Setlist();
         $setlist->Musica = $request->Musica;
         $setlist->Interprete = $request->Interprete;
         $setlist->Link = $request->Link;
         $setlist->save();
+
+        return redirect()->route('setlist.index');
+    }
+
+    public function edit($id)
+    {
+        if(!$setlist = $this->model->find($id))
+            return redirect()->route('setlist.index'); 
+
+        return view('setlist.edit', compact('setlist')); 
+    }
+
+    public function update(SetListRequest $request, $id)
+    {
+        if(!$setlist = $this->model->find($id))
+            return redirect()->route('setlist.index'); 
+        
+        $data = $request->all();
+
+        $setlist->update($data);
+
+        return redirect()->route('setlist.index');
+    }
+
+    public function destroy($id)
+    {
+        if(!$setlist = $this->model->find($id))
+            return redirect()->route('setlist.index'); 
+        
+        $setlist->delete();
 
         return redirect()->route('setlist.index');
     }

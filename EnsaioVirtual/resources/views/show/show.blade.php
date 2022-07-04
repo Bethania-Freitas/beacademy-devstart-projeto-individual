@@ -15,7 +15,8 @@
             <th scope="col">Cachê</th>
             <th scope="col">Data do Cadastro</th>
             <th scope="col">Responsável</th>
-            <th scope="col">Ações</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Excluir</th>
             </tr>
         </thead>
         <tbody class="text-center">
@@ -29,9 +30,13 @@
                     <td>{{ $show->Cachê }}</td>
                     <td>{{ date('d/m/Y', strtotime($show->created_at)) }}</td>
                     <td>Bethânia</td>
+                    <td><a href="{{ route('show.edit', $show->id) }}" class="btn btn-warning text-white" >Editar</a></td>
                     <td>
-                        <a href="{{ route('show.show', $show->id) }}" class="btn btn-warning text-white" >Editar</a>
-                        <a href="{{ route('show.show', $show->id) }}" class="btn btn-danger text-white" >Excluir</a>
+                    <form action="{{ route('show.destroy', $show->id) }}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" class="btn btn-danger text-white">Deletar</button>
+                    </form>
                     </td>
                 </tr>
 

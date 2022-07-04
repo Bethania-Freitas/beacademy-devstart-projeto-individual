@@ -11,7 +11,8 @@
             <th scope="col">Data e Hora</th>
             <th scope="col">Local</th>
             <th scope="col">Custo</th>
-            <th scope="col">Ações</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Deletar</th>
             </tr>
         </thead>
         <tbody class="text-center">
@@ -20,9 +21,13 @@
                     <td>{{ date('d/m/Y H:m', strtotime($rehearsal->Data)) }}</td>
                     <td>{{ $rehearsal->Local }}</td>
                     <td>{{ $rehearsal->Custo }}</td>
+                    <td><a href="{{ route('rehearsal.edit', $rehearsal->id) }}" class="btn btn-warning text-white">Editar</a></td>
                     <td>
-                        <a href="{{ route('rehearsal.show', $rehearsal->id) }}" class="btn btn-warning text-white">Editar</a>
-                        <a href="{{ route('rehearsal.show', $rehearsal->id) }}" class="btn btn-danger text-white">Excluir</a>
+                        <form action="{{ route('rehearsal.destroy', $rehearsal->id) }}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-danger text-white">Deletar</button>
+                        </form>
                     </td>
                 </tr>
 

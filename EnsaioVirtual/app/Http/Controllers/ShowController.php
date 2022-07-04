@@ -4,11 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Show;
 use Illuminate\Http\Request;
+use App\Http\Requests\ShowRequest;
 
 
 
 class ShowController extends Controller
 {
+    public function __construct(show $show)
+    {
+        $this->model = $show;
+    }
+
     public function index()
     {
         $shows = Show::all();
@@ -28,7 +34,7 @@ class ShowController extends Controller
         return view('show.create');
     }
 
-    public function store(Request $request)
+    public function store(ShowRequest $request)
     {
         $show = new Show();
         $show->Data = $request->Data;
@@ -40,5 +46,36 @@ class ShowController extends Controller
 
         return redirect()->route('show.index');
     }
+
+    public function edit($id)
+    {
+        if(!$show = $this->model->find($id))
+            return redirect()->route('show.index'); 
+
+        return view('show.edit', compact('show')); 
+    }
+
+    public function update(ShowRequest $request, $id)
+    {
+        if(!$show = $this->model->find($id))
+            return redirect()->route('show.index'); 
+        
+        $data = $request->all();
+
+        $show->update($data);
+
+        return redirect()->route('show.index');
+    }
+
+    public function destroy($id)
+    {
+        if(!$show = $this->model->find($id))
+            return redirect()->route('show.index'); 
+        
+        $show->delete();
+
+        return redirect()->route('show.index');
+    }
+
 
 }

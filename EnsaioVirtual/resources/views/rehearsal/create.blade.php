@@ -3,6 +3,16 @@
 @section('body')
 <div class="container">
     <h1>Agendar Ensaio</h1>
+
+    @if($errors->any())
+        <div class="alert alert-danger" role="alert">
+            @foreach($errors->all() as $error)
+                {{ $error }}<br>
+            @endforeach
+        </div>
+    @endif
+
+    
     <form action="{{ route('rehearsal.store')}}" method="POST">
     @csrf
         <div class="mb-3">

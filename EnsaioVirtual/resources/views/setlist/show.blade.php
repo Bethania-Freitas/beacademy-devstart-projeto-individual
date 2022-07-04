@@ -11,7 +11,8 @@
             <th scope="col">Musica</th>
             <th scope="col">Interprete</th>
             <th scope="col">Link</th>
-            <th scope="col">Ações</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Deletar</th>
             <th scope="col">Seleção</th>
             </tr>
         </thead>
@@ -21,10 +22,13 @@
                     <td>{{ $setlist->Musica }}</td>
                     <td>{{ $setlist->Interprete }}</td>
                     <td>{{ $setlist->Link }}</td>
+                    <td><a href="{{ route('setlist.edit', $setlist->id) }}" class="btn btn-warning text-white">Editar</a></td>
                     <td>
-                        <a href="{{ route('setlist.show', $setlist->id) }}" class="btn btn-warning text-white">Editar</a>
-                        <a href="{{ route('setlist.show', $setlist->id) }}" class="btn btn-danger text-white">Excluir</a>
-                    </td>
+                    <form action="{{ route('setlist.destroy', $setlist->id) }}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" class="btn btn-danger text-white">Deletar</button>
+                    </form>
                     <td>{{ $setlist->Seleção }}</td>
                 </tr>
         </tbody>

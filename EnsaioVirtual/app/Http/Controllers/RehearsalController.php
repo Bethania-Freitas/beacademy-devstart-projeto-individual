@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Rehearsal;
 use Illuminate\Http\Request;
+use App\Http\Requests\RehearsalRequest;
 
 class RehearsalController extends Controller
 {
@@ -31,7 +32,7 @@ class RehearsalController extends Controller
         return view('rehearsal.create');
     }
 
-    public function store(Request $request)
+    public function store(RehearsalRequest $request)
     {
         $data = $request->all();
 
@@ -40,4 +41,32 @@ class RehearsalController extends Controller
         return redirect()->route('rehearsal.index');
 
     }
+
+    public function edit($id)
+    {
+        if(!$rehearsal = $this->model->find($id))
+            return redirect()->route('rehearsal.index'); 
+
+        return view('rehearsal.edit', compact('rehearsal')); 
+    }
+
+    public function update(RehearsalRequest $request, $id)
+    {
+        if(!$rehearsal = $this->model->find($id))
+            return redirect()->route('rehearsal.index'); 
+        
+        $data = $request->all();
+
+        $rehearsal->update($data);
+
+        return redirect()->route('rehearsal.index');
+    }
+
+    public function destroy($id)
+    {
+        Rehearsal::FindOrFail($id)->delete();
+
+        return redirect()->route('rehearsal.index');
+    }
+
 }
