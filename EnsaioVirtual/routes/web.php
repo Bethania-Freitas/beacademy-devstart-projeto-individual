@@ -5,6 +5,7 @@ use App\Http\Controllers\RehearsalController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ShowController;
 use App\Http\Controllers\SetlistController;
+use App\Http\Controllers\FileController;
 
 
 Route::get('/', function () {
@@ -38,3 +39,5 @@ Route::get('/rehearsal/create', [\App\Http\Controllers\RehearsalController::clas
 Route::get('/rehearsal/{id}', [\App\Http\Controllers\RehearsalController::class, 'show'])->name('rehearsal.show');
 
 
+Route::get('file', [FileController::class, 'index'])->name('file');
+Route::post('file', [FileController::class, 'store'])->name('file.store');
