@@ -13,6 +13,7 @@ class Setlist extends Model
         'Musica',
         'Interprete',
         'Link',
+        'Lyric',
     ];
 
     public function getUsers(string $search = null)
@@ -28,15 +29,14 @@ class Setlist extends Model
         return $setlists;
     }
 
-
-
-    public function file()
+    public function setList()
     {
-        return $this->hasOne(file::class, 'id_lyrics', 'id');
+        return $this->hasOne(Lyrics::class, 'id_lyrics', 'id');
     }
 
     public function buscarSetListComLyrics($id)
     {
         return self::find($id)->with('file');
     }
+    
 }

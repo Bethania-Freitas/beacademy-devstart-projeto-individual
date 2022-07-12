@@ -27,18 +27,14 @@
             <label for="Link" class="form-label">Link</label>
             <input type="link" class="form-control" id="Link" name="Link" aria-describedby="Link">
         </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
     </form>   
-</div>  
-
-<div class="container"> 
     <form action="{{ route('file.store') }}" enctype="multipart/form-data" method="POST">
     @csrf
         <div class="mb-3">
             <label for="file" class="form-label">Adicionar Letra em PDF</label>
             <input type="file" class="form-control" name="file" >       
         </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>         
+    </form>  
+    <button type="submit" class="btn btn-primary">Enviar</button>       
 </div>
 @endsection

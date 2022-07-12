@@ -21,6 +21,10 @@ return new class extends Migration
             $table->text('content')->nullable();
             $table->timestamps();
         });
+
+        Schema::table('files', function (Blueprint $table) {
+            $table->foreign('id_lyrics')->references('id')->on('setlists')->onDelete('CASCADE');
+        });
     }
 
     /**

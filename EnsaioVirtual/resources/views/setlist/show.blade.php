@@ -33,8 +33,8 @@
                 </tr>
         </tbody>
         </table>
-        <div class="container">
-            <textarea type="text" readonly>{{ $file->content }}</textarea>
+        <div class="container">        
+            <textarea type="text" readonly>{{ $setlist->content }}</textarea>
         </div>
     </div>
 

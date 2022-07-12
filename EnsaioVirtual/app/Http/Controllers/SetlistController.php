@@ -37,11 +37,13 @@ class SetlistController extends Controller
 
     public function store(SetListRequest $request)
     {
+        
         $setlist = new Setlist();
         $setlist->Musica = $request->Musica;
         $setlist->Interprete = $request->Interprete;
         $setlist->Link = $request->Link;
         $setlist->save();
+
         
         return redirect()->route('setlist.index');
     }

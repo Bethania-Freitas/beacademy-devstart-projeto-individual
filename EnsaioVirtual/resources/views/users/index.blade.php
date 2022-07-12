@@ -35,7 +35,7 @@
                    @else
                        <th><img src="{{ asset('storage/profile/avatar.jpg') }}" width="50px" height="50px" class="rounded-circle" alt=""></th>
                    @endif
-                      <td>{{ $user->name }}</td>
+                    <td>{{ $user->name }}</td>
                    <td>{{ $user->email }}</td>
                    <td>{{ date('d/m/Y - H:i', strtotime( $user->created_at )) }}</td>
                    <td><a href="{{ route('users.show', $user->id) }}" class="btn btn-info text-white">Visualizar</a></td>
