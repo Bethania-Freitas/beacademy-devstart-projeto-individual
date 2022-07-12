@@ -10,11 +10,25 @@ class Setlist extends Model
     use HasFactory;
 
     protected $fillable = [
-        'Nome da Musica',
+        'Musica',
         'Interprete',
         'Link',
-
     ];
+
+    public function getUsers(string $search = null)
+    {
+        $setlists = $this->where( function ($query) use ($search)  {
+            if($search){
+                $query->where('Musica', 'LIKE', "%{$search}%");
+                $query->orWhere('Interprete', 'LIKE', "%{$search}%");
+            }
+        })
+        ->paginate(7);
+
+        return $setlists;
+    }
+
+
 
     public function file()
     {

@@ -9,27 +9,25 @@ use APP\Models\File;
 
 class SetlistController extends Controller
 {
-
     public function __construct(setlist $setlist)
     {
         $this->model = $setlist;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $setlists = Setlist::paginate(7);
+        $setlists = $this->model->getUsers(
+            $request->search ?? ''
+        );
 
         return view('setlist.index', compact('setlists')) ;
-
     }
 
     public function show($id)
     {
-
-
         $setlist = Setlist::findOrFail($id);
-        return view('setlist.show', compact('setlist'));
 
+        return view('setlist.show', compact('setlist'));
     }
 
     public function create()
@@ -44,6 +42,7 @@ class SetlistController extends Controller
         $setlist->Interprete = $request->Interprete;
         $setlist->Link = $request->Link;
         $setlist->save();
+        
         return redirect()->route('setlist.index');
     }
 

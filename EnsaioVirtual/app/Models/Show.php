@@ -10,11 +10,26 @@ class Show extends Model
     use HasFactory;
 
     protected $fillable = [
-        'data',
-        'local',
+        'Data',
+        'Local',
         'Formato',
-        'cidade',
-        'Nome Contratante',
+        'Cidade',
         'Cachê'
     ];
+
+    public function getUsers(string $search = null)
+    {
+        $shows = $this->where( function ($query) use ($search)  {
+            if($search){
+                $query->where('local', 'LIKE', "%{$search}%");
+                $query->orWhere('cidade', 'LIKE', "%{$search}%");
+                $query->orWhere('formato', 'LIKE', "%{$search}%");
+            }
+        })
+        ->paginate(7);
+
+        return $shows;
+    }
 }
+
+

@@ -15,9 +15,12 @@ class ShowController extends Controller
         $this->model = $show;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $shows = Show::paginate(7);
+        
+        $shows = $this->model->getUsers(
+            $request->search ?? ''
+        );
 
         return view('show.index', compact('shows'));
     }
@@ -76,6 +79,4 @@ class ShowController extends Controller
 
         return redirect()->route('show.index');
     }
-
-
 }

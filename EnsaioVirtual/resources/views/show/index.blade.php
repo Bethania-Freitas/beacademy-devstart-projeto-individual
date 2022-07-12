@@ -20,7 +20,6 @@
         <table class="table text-center">
         <thead>
             <tr>
-            <th scope="col">ID</th>
             <th scope="col">Data e Hora</th>
             <th scope="col">Local</th>
             <th scope="col">Cidade</th>
@@ -32,7 +31,6 @@
         <tbody class="text-center">
             @foreach ($shows as $show)
                 <tr>
-                    <th scope="row">{{ $show->id }}</th>
                     <td>{{ date('d/m/Y H:m', strtotime($show->Data)) }}</td>
                     <td>{{ $show->Local }}</td>
                     <td>{{ $show->Cidade }}</td>
