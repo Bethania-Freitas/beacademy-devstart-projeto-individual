@@ -20,6 +20,9 @@
       <li class="nav-item active">
         <a class="nav-link" href="{{ route('setlist.index') }}">Setlist </a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ route('users.index') }}">Usuários </a>
+      </li>
   </div>
 </nav>
     <br>

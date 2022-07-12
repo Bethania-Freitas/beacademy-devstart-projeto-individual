@@ -2,13 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RehearsalController;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ShowController;
 use App\Http\Controllers\SetlistController;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\UserController;
 
-
-Route::get('/login', [\App\Http\Controllers\LoginController::class, 'index'])->name('login.index');
+Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
+Route::post('/user', [UserController::class, 'store'])->name('users.store');
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
+Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
 
 Route::delete('/show/{id}', [ShowController::class, 'destroy'])->name('show.destroy');
 Route::get('/show/{id}/edit', [ShowController::class, 'edit'])->name('show.edit');
