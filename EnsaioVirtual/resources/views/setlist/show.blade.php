@@ -33,8 +33,10 @@
                 </tr>
         </tbody>
         </table>
-        <div class="form-floating">        
-            <textarea type="text" readonly>{{ $setlist->) }}</textarea>
+   
+        <div class="card-body">   
+                <h5 class="card-title">Letra: {{ $setlist->Musica }}</h5> 
+                    <textarea type="text" style="height: 400px" class="col-5">{{ $setlist->file->content }}</textarea>
         </div>
     </div>
 

@@ -36,9 +36,7 @@ class Setlist extends Model
 
     Public static function buscarSetlistComLyrics($id)
     {
-        return static::with('file')->paginate('content');
-
-        //  return static::with('file')->find($id);
+        return static::with('file')->find($id);
     }
 
 }
