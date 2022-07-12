@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Setlist;
 use Illuminate\Http\Request;
 use App\Http\Requests\SetListRequest;
+use APP\Models\File;
 
 class SetlistController extends Controller
 {
+
     public function __construct(setlist $setlist)
     {
         $this->model = $setlist;
@@ -15,16 +17,19 @@ class SetlistController extends Controller
 
     public function index()
     {
-        $setlists = Setlist::all();
+        $setlists = Setlist::paginate(7);
 
         return view('setlist.index', compact('setlists')) ;
+
     }
 
     public function show($id)
     {
-        $setlist = Setlist::findOrFail($id);
 
+
+        $setlist = Setlist::findOrFail($id);
         return view('setlist.show', compact('setlist'));
+
     }
 
     public function create()
@@ -39,7 +44,6 @@ class SetlistController extends Controller
         $setlist->Interprete = $request->Interprete;
         $setlist->Link = $request->Link;
         $setlist->save();
-
         return redirect()->route('setlist.index');
     }
 

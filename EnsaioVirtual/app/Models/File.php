@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class File extends Model
 {
     use HasFactory;
+
+    public function setList()
+    {
+        return $this->belongsTo(Setlist::class, 'id_lyrics', 'id');
+    }
 }

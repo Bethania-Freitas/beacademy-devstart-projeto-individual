@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('Interprete');
             $table->string('Link');
             $table->boolean('Seleção');
+            $table->id_lyric();
             $table->timestamps();
         });
     }

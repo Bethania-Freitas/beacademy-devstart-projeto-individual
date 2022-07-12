@@ -8,10 +8,6 @@ use App\Http\Controllers\SetlistController;
 use App\Http\Controllers\FileController;
 
 
-Route::get('/', function () {
-    return view('home/home');
-});
-
 Route::get('/login', [\App\Http\Controllers\LoginController::class, 'index'])->name('login.index');
 
 Route::delete('/show/{id}', [ShowController::class, 'destroy'])->name('show.destroy');

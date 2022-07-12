@@ -33,5 +33,9 @@
                 </tr>
         </tbody>
         </table>
+        <div class="container">
+            <textarea type="text" readonly>{{ $file->content }}</textarea>
+        </div>
     </div>
+
 @endsection

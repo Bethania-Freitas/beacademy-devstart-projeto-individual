@@ -15,7 +15,7 @@ class RehearsalController extends Controller
 
     public function index()
     {
-        $rehearsals = rehearsal::all();
+        $rehearsals = rehearsal::paginate(7);
 
         return view('rehearsal.index', compact('rehearsals')) ;
     }

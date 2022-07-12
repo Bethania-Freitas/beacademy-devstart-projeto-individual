@@ -1,9 +1,22 @@
 @extends('_partials/head')
 @section('title', 'Próximos Shows')
 @section('body')
-    <div class='container'>
-        <h1>Lista de Shows</h1>
-        <a href="{{ route('show.create') }}" class="btn btn-dark">Novo Show</a>
+
+    <div class="container">
+    <h1>Próximos Shows:</h1>
+        <div class="row">
+            <div class="col-sm mt-2 mb-5">
+                <a class="btn btn-outline-dark" href="{{ route('show.create') }}">Novo Show</a>
+            </div>
+            <div class="col-sm mt-2 mb-5">
+                <form action="{{ route('show.index') }}" method="GET">
+                    <div class="input-group">
+                         <input type="search" class="form-control rounded" placeholder="Pesquisar: " name="search" />
+                         <button type="submit" class="btn btn-dark">Procurar</button>
+                    </div>
+                </form>
+            </div>
+        </div>   
         <table class="table text-center">
         <thead>
             <tr>
@@ -30,5 +43,8 @@
             @endforeach
         </tbody>
         </table>
+    </div>
+    <div class="pagination justify-content-center">
+         {{ $shows->links('pagination::bootstrap-4') }}
     </div>
 @endsection
