@@ -29,14 +29,16 @@ class Setlist extends Model
         return $setlists;
     }
 
-    public function setList()
+    public function file()
     {
-        return $this->hasOne(Lyrics::class, 'id_lyrics', 'id');
+        return $this->hasOne(File::class, 'id', 'id_lyrics');
     }
 
-    public function buscarSetListComLyrics($id)
+    Public static function buscarSetlistComLyrics($id)
     {
-        return self::find($id)->with('file');
+        return static::with('file')->paginate('content');
+
+        //  return static::with('file')->find($id);
     }
-    
+
 }

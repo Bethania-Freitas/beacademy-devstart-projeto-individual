@@ -33,8 +33,8 @@
                 </tr>
         </tbody>
         </table>
-        <div class="container">        
-            <textarea type="text" readonly>{{ $setlist->content }}</textarea>
+        <div class="form-floating">        
+            <textarea type="text" readonly>{{ $setlist->) }}</textarea>
         </div>
     </div>
 
