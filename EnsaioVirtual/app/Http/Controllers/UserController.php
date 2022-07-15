@@ -50,7 +50,6 @@ class UserController extends Controller
             $data['image'] = $path;
         }
 
-
         $this->model->create($data);
 
         return redirect()->route('users.index');

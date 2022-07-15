@@ -5,9 +5,11 @@
     <div class="container">
     <h1>Próximos Shows:</h1>
         <div class="row">
-            <div class="col-sm mt-2 mb-5">
-                <a class="btn btn-outline-dark" href="{{ route('show.create') }}">Novo Show</a>
-            </div>
+            @if(Auth()->check() && auth()->user()->is_admin == 1)
+                <div class="col-sm mt-2 mb-5">
+                    <a class="btn btn-outline-dark" href="{{ route('show.create') }}">Novo Show</a>
+                </div>
+            @endif
             <div class="col-sm mt-2 mb-5">
                 <form action="{{ route('show.index') }}" method="GET">
                     <div class="input-group">
@@ -24,7 +26,6 @@
             <th scope="col">Local</th>
             <th scope="col">Cidade</th>
             <th scope="col">Formato</th>
-            <th scope="col">Cachê</th>
             <th scope="col">Ações</th>
             </tr>
         </thead>
@@ -35,7 +36,6 @@
                     <td>{{ $show->Local }}</td>
                     <td>{{ $show->Cidade }}</td>
                     <td>{{ $show->Formato }}</td>
-                    <td>{{ $show->Cachê }}</td>
                     <td><a href="{{ route('show.show', $show->id) }}" class="btn btn-info text-white" >Visualizar</a></td>
                 </tr>
             @endforeach

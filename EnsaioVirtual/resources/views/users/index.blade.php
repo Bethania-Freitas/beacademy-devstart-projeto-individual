@@ -3,7 +3,7 @@
 @section('body')
 
     <div class="container">
-    <h1>Listagem de Usuários</h1>
+    <h1>Adminsiradores</h1>
        <div class="row">
            <div class="col-sm mt-2 mb-5">
                <a class="btn btn-outline-dark" href="{{ route('users.create') }}">Cadastrar Usuário</a>
@@ -31,9 +31,9 @@
            @foreach($users as $user)
                <tr>
                    @if($user->image)
-                       <th><img src="{{ asset('storage/'.$user->image) }}" width="50px" height="50px" class="rounded-circle" alt=""></th>
+                   <th><img src="{{ asset('profile/'.$user->image) }}" width="50px" height="50px" class="rounded-circle" alt=""></th>
                    @else
-                       <th><img src="{{ asset('/profile/avatar.jpg') }}" width="50px" height="50px" class="rounded-circle" alt=""></th>
+                       <th><img src="/profile/avatar.jpg" width="50px" height="50px" class="rounded-circle" alt=""></th>
                    @endif
                     <td>{{ $user->name }}</td>
                    <td>{{ $user->email }}</td>

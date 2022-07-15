@@ -24,7 +24,7 @@
                     <textarea class="form-control" name="" id="" cols="30" rows="10" required></textarea>
                 </div>
                 <div>
-                    <button type="submit">Enviar</button>
+                    <button class="btn btn-primary" type="submit">Enviar</button>
                 </div>
             </form>
         </div>
