@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RehearsalController;
@@ -49,6 +50,10 @@ Route::middleware(['auth'])->group(function() {
     
     Route::get('file', [FileController::class, 'index'])->name('file');
     Route::post('file', [FileController::class, 'store'])->name('file.store');
+});
+
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'admin'])->name('admin');
 });
 
 
