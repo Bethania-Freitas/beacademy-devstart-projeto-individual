@@ -2,8 +2,8 @@
 @section('title', 'Contato')
 @section('body')
 
-<h1>Contato</h1>
 <div class="container">
+    <h1>Contato</h1>
     <div class="row justify-content-center">
         <div class="col-6">
             <form action="" method="get">

@@ -60,7 +60,7 @@
    @yield('body')
   </div>
 </script>
-<footer>
+<footer class="footer navbar-fixed-bottom">
 <br>
 <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">

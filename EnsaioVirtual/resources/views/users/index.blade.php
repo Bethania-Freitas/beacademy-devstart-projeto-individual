@@ -3,7 +3,7 @@
 @section('body')
 
     <div class="container">
-    <h1>Adminsiradores</h1>
+    <h1>Administradores</h1>
        <div class="row">
            <div class="col-sm mt-2 mb-5">
                <a class="btn btn-outline-dark" href="{{ route('users.create') }}">Cadastrar Usuário</a>

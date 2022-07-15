@@ -33,10 +33,14 @@
                 </tr>
         </tbody>
         </table>
-   
-        <div class="card-body">   
-                <h5 class="card-title">Letra: {{ $setlist->Musica }}</h5> 
-                    <textarea type="text" style="height: 400px" class="col-5">{{ $setlist->file->content }}</textarea>
+        <div class="row justify-content-center">
+            </div class="col-2">
+                <div class="card-body">   
+                        <h5 class="card-title">Letra: {{ $setlist->Musica }}</h5> 
+                            <textarea type="text" style="height: 400px" class="col-4">{{ $setlist->file->content }}</textarea>
+                </div>
+                <iframe width="560" height="315" src="{{ $setlist->Link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
 
