@@ -8,12 +8,16 @@ use App\Http\Controllers\ShowController;
 use App\Http\Controllers\SetlistController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ContactController;
 
 require __DIR__.'/auth.php';
 
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/show', [\App\Http\Controllers\ShowController::class, 'index'])->name('show.index');
+Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'index'])->name('contact.index');
 
 Route::middleware(['auth'])->group(function() {
     Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
@@ -27,7 +31,6 @@ Route::middleware(['auth'])->group(function() {
     Route::delete('/show/{id}', [ShowController::class, 'destroy'])->name('show.destroy');
     Route::get('/show/{id}/edit', [ShowController::class, 'edit'])->name('show.edit');
     Route::put('/show/{id}', [ShowController::class, 'update'])->name('show.update');
-    Route::get('/show', [\App\Http\Controllers\ShowController::class, 'index'])->name('show.index');
     Route::post('/show', [\App\Http\Controllers\ShowController::class, 'store'])->name('show.store');
     Route::get('/show/create', [\App\Http\Controllers\ShowController::class, 'create'])->name('show.create');
     Route::get('/show/{id}', [\App\Http\Controllers\ShowController::class, 'show'])->name('show.show');

@@ -16,17 +16,22 @@
             <div class="col-10">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="{{ route('show.index') }}">Shows </a>
+                  <a class="nav-link" href="{{ route('show.index') }}">Próximos Shows </a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="{{ route('rehearsal.index') }}">Ensaios </a>
+                  <a class="nav-link" href="{{ route('contact.index') }}">Contato </a>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="{{ route('setlist.index') }}">Setlist </a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="{{ route('users.index') }}">Usuários </a>
-                </li>
+                @if(Auth()->check() && auth()->user()->is_admin == 1)
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('rehearsal.index') }}">Ensaios </a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('setlist.index') }}">Setlist </a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('users.index') }}">Usuários </a>
+                  </li>
+                @endif
               </ul>  
             </div>  
             <div class="col-2">
@@ -41,10 +46,7 @@
                   </form>
                 @else
                   <li class="nav-item">
-                    <a class="nav-link"  href="{{ route('login') }}">Entrar</a>
-                  </li>
-                  <li>
-                    <a class="nav-link" href="{{ route('register') }}">Cadastrar</a>
+                    <a class="nav-link"  href="{{ route('login') }}">Admin</a>
                   </li>
                 @endif
               </ul>
