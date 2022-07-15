@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('mime_type', 50)->nullable();
             $table->bigInteger('filesize');
             $table->text('content')->nullable();
+            $table->unsignedBigInteger('id_lyric')->nullable();
             $table->timestamps();
         });
 

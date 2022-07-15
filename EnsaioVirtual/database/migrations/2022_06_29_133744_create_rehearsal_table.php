@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('rehearsal', function (Blueprint $table) {
             $table->id();
-            $table->date('Data');
-            $table->date('Hora');
+            $table->dateTime('Data');
             $table->string('Local');
             $table->float('Custo');
             $table->timestamps();
