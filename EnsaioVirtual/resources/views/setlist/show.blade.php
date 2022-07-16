@@ -13,7 +13,6 @@
             <th scope="col">Link</th>
             <th scope="col">Editar</th>
             <th scope="col">Deletar</th>
-            <th scope="col">Seleção</th>
             </tr>
         </thead>
         <tbody class="text-center">
@@ -21,7 +20,9 @@
                     <th scope="row">{{ $setlist->id }}</th>
                     <td>{{ $setlist->Musica }}</td>
                     <td>{{ $setlist->Interprete }}</td>
-                    <td>{{ $setlist->Link }}</td>
+                    <td>
+                        <a href="{{ $setlist->Link }}" class="btn btn-dark">Video</a>                    
+                    </td>
                     <td><a href="{{ route('setlist.edit', $setlist->id) }}" class="btn btn-warning text-white">Editar</a></td>
                     <td>
                     <form action="{{ route('setlist.destroy', $setlist->id) }}" method="POST">
@@ -29,19 +30,14 @@
                         @csrf
                         <button type="submit" class="btn btn-danger text-white">Deletar</button>
                     </form>
-                    <td>{{ $setlist->Seleção }}</td>
+                    
                 </tr>
         </tbody>
         </table>
-        <div class="row justify-content-center">
-            </div class="col-2">
                 <div class="card-body">   
                         <h5 class="card-title">Letra: {{ $setlist->Musica }}</h5> 
-                            <textarea type="text" style="height: 400px" class="col-4">{{ $setlist->file->content }}</textarea>
+                            <textarea type="text" style="height: 400px" class="col-5">{{ $setlist->file->content }}</textarea>
                 </div>
-                <iframe width="560" height="315" src="{{ $setlist->Link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
     </div>
 
 @endsection

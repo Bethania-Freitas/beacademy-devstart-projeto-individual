@@ -31,7 +31,7 @@
                     <th scope="row">{{ $setlist->id }}</th>
                     <td>{{ $setlist->Musica }}</td>
                     <td>{{ $setlist->Interprete }}</td>
-                    <td><a href="{{ route('setlist.show', $setlist->id) }}" class="btn btn-info text-white">Visualizar</a></td>
+                    <td><a href="{{ route('setlist.show', $setlist->id) }}" class="btn btn-dark text-white">Visualizar</a></td>
                 </tr>
             @endforeach
         </tbody>

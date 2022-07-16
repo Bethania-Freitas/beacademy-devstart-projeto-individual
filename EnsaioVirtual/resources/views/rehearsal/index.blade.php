@@ -31,7 +31,7 @@
                     <th scope="row">{{ $rehearsal->id }}</th>
                     <td>{{ date('d/m/Y H:m', strtotime($rehearsal->Data)) }}</td>
                     <td>{{ $rehearsal->Local }}</td>
-                    <td><a href="{{ route('rehearsal.show', $rehearsal->id) }}" class="btn btn-info text-white">Visualizar</a></td>
+                    <td><a href="{{ route('rehearsal.show', $rehearsal->id) }}" class="btn btn-dark text-white">Visualizar</a></td>
 
                 </tr>
             @endforeach

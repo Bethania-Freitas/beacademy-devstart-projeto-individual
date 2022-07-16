@@ -36,7 +36,7 @@
                     <td>{{ $show->Local }}</td>
                     <td>{{ $show->Cidade }}</td>
                     <td>{{ $show->Formato }}</td>
-                    <td><a href="{{ route('show.show', $show->id) }}" class="btn btn-info text-white" >Visualizar</a></td>
+                    <td><a href="{{ route('show.show', $show->id) }}" class="btn btn-dark text-white" >Visualizar</a></td>
                 </tr>
             @endforeach
         </tbody>

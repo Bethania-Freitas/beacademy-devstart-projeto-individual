@@ -31,14 +31,14 @@
            @foreach($users as $user)
                <tr>
                    @if($user->image)
-                   <th><img src="{{ asset('profile/'.$user->image) }}" width="50px" height="50px" class="rounded-circle" alt=""></th>
+                   <th><img src="{{ asset('/profile/'.$user->image) }}" width="50px" height="50px" class="rounded-circle" alt=""></th>
                    @else
                        <th><img src="/profile/avatar.jpg" width="50px" height="50px" class="rounded-circle" alt=""></th>
                    @endif
                     <td>{{ $user->name }}</td>
                    <td>{{ $user->email }}</td>
                    <td>{{ date('d/m/Y - H:i', strtotime( $user->created_at )) }}</td>
-                   <td><a href="{{ route('users.show', $user->id) }}" class="btn btn-info text-white">Visualizar</a></td>
+                   <td><a href="{{ route('users.show', $user->id) }}" class="btn btn-dark text-white">Visualizar</a></td>
                </tr>
            @endforeach
        </tbody>
