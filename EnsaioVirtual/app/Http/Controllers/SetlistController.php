@@ -43,9 +43,8 @@ class SetlistController extends Controller
         $setlist->Interprete = $request->Interprete;
         $setlist->Link = $request->Link;
         $setlist->save();
-
-        
-        return redirect()->route('setlist.index');
+    
+        return redirect()->route('setlist.index')->with('edit', 'Música cadastrada com sucesso! 😁');
     }
 
     public function edit($id)
@@ -65,7 +64,7 @@ class SetlistController extends Controller
 
         $setlist->update($data);
 
-        return redirect()->route('setlist.index');
+        return redirect()->route('setlist.index')->with('edit', 'Musica atualizada com sucesso! ☺');
     }
 
     public function destroy($id)
@@ -75,6 +74,6 @@ class SetlistController extends Controller
         
         $setlist->delete();
 
-        return redirect()->route('setlist.index');
+        return redirect()->route('setlist.index')->with('destroy', 'Musica deletada! 😥');
     }
 }

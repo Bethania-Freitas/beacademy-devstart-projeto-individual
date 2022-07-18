@@ -38,7 +38,7 @@ class RehearsalController extends Controller
 
         $this->model->create($data);
 
-        return redirect()->route('rehearsal.index');
+        return redirect()->route('rehearsal.index')->with('edit', 'Ensaio agendado com sucesso! 😁');
 
     }
 
@@ -59,14 +59,14 @@ class RehearsalController extends Controller
 
         $rehearsal->update($data);
 
-        return redirect()->route('rehearsal.index');
+        return redirect()->route('rehearsal.index')->with('edit', 'Ensaio atualizado com sucesso! ☺');
     }
 
     public function destroy($id)
     {
         Rehearsal::FindOrFail($id)->delete();
 
-        return redirect()->route('rehearsal.index');
+        return redirect()->route('rehearsal.index')->with('destroy', 'Ensaio cancelado! 😥');
     }
 
 }

@@ -47,7 +47,7 @@ class ShowController extends Controller
         $show->Cachê = $request->Cachê;
         $show->save();
 
-        return redirect()->route('show.index');
+        return redirect()->route('show.index')->with('edit', 'Show agendado com sucesso! 😁');
     }
 
     public function edit($id)
@@ -67,7 +67,7 @@ class ShowController extends Controller
 
         $show->update($data);
 
-        return redirect()->route('show.index');
+        return redirect()->route('show.index')->with('edit', 'Show atualizado com sucesso! ☺');
     }
 
     public function destroy($id)
@@ -77,6 +77,6 @@ class ShowController extends Controller
         
         $show->delete();
 
-        return redirect()->route('show.index');
+        return redirect()->route('show.index')->with('destroy', 'Show cancelado! 😥');
     }
 }
