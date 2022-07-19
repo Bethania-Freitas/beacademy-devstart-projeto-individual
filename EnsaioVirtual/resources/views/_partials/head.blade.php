@@ -10,6 +10,10 @@
     <style>
       body {
           background-image: url("/fotos/background.jpg");
+          height: 100%;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
           }
     </style>
     </head>
