@@ -41,13 +41,12 @@ class UserController extends Controller
 
     public function store(StoreUpdateUserFormRequest $request)
     {
+
         $data = $request->all();
         $data['password'] = bcrypt($request->password);
 
-        if($request->image){
-            $file = $request['image'];
-            $path = $file->store('profile', 'public');
-            $data['image'] = $path;
+        if ($request->image) {
+            $data['image'] = $request->image->store('users');
         }
 
         $this->model->create($data);
