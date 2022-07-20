@@ -23,7 +23,6 @@ class User extends Authenticatable
         'email',
         'image',
         'password',
-        'is_admin',
     ];
 
     /**
@@ -36,6 +35,10 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    protected $attributes = [
+        'is_admin' => 1
+    ];
+
     /**
      * The attributes that should be cast.
      *
@@ -43,6 +46,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        
     ];
 
     public function getUsers(string $search = null)
