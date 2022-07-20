@@ -9,6 +9,7 @@ use App\Http\Controllers\SetlistController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
+use App\Models\Contact;
 
 require __DIR__.'/auth.php';
 
@@ -55,6 +56,8 @@ Route::middleware(['auth'])->group(function() {
     
     Route::get('file', [FileController::class, 'index'])->name('file');
     Route::post('file', [FileController::class, 'store'])->name('file.store');
+
+    Route::get('/contact/show', [ContactController::class, 'show'])->name('contact.show');
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {

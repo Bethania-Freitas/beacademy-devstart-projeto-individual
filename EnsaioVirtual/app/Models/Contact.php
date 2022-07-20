@@ -15,5 +15,5 @@ class Contact extends Model
         'tel',
         'messageClient',
     ];
-    protected $table = "contact_to_post";
+    protected $table = "contacts";
 }

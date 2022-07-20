@@ -29,4 +29,11 @@ class RehearsalRequest extends FormRequest
             'Custo' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'required' => 'Campo :attribute é obrigatório',
+        ];
+    }
 }

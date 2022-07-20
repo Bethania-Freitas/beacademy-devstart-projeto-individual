@@ -24,10 +24,21 @@ class ContactRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'email' => 'required',
+            'name' => 'required|string|max:50|min:3',
+            'email' => 'required|email',
             'tel' => 'required',
-            'messageClient' =>'required',
+            'messageClient' =>'required|max:2000|min:10',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'required' => 'Campo :attribute é obrigatório',
+            'string' => 'Campo :attribute precisa contar letras',
+            'max' => 'Campo deve ter o maximo de :max caracteres',
+            'min' => 'Campo deve ter o mínimo de :min caracteres',
+            'email' => 'Campo e-mail inválido. Tente novamente',
         ];
     }
 }

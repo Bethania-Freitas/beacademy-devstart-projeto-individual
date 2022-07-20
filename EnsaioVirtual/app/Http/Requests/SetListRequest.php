@@ -29,4 +29,13 @@ class SetListRequest extends FormRequest
             'Link'=> 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            
+            'required' => 'Campo :attribute é obrigatório',
+            
+        ];
+    }
 }

@@ -53,7 +53,6 @@ class StoreUpdateUserFormRequest extends FormRequest
         }
 
         return $rules;
-
     }
 
 }

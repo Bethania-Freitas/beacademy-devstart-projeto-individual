@@ -32,4 +32,13 @@ class ShowRequest extends FormRequest
         ];
         
     }
+
+    public function messages()
+    {
+        return [
+            'required' => 'Campo :attribute é obrigatório',
+            'min' => 'Campo deve ter o mínimo de :min caracteres',
+
+        ];
+    }
 }

@@ -30,5 +30,12 @@ class ContactController extends Controller
 
         return redirect()->route('contact.index')->with('edit', 'Obrigado pelo contato!! 😁');
     }
+    
+    public function show()
+    {
+        $contact = Contact::paginate(5);
+
+        return view('contact.show', compact('contact'));
+    }
 
 }

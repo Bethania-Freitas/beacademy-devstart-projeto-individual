@@ -26,12 +26,12 @@
               <ul class="navbar-nav mr-auto">
                 <img class="me-5"src="/Icons/5j.png" alt="" width="40" height="40">
                 <a class="navbar-brand text-warning" href="/">Home</a>
-                <li class="nav-item active">
-                  <a class="nav-link" href="{{ route('show.index') }}">Próximos Shows </a>
-                </li>
-                <li class="nav-item active text-warning">
-                  <a class="nav-link" href="{{ route('contact.index') }}">Contato </a>
-                </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{{ route('show.index') }}">Próximos Shows </a>
+                  </li>
+                  <li class="nav-item active text-warning">
+                    <a class="nav-link" href="{{ route('contact.index') }}">Contato </a>
+                  </li>
                 @if(Auth()->check() && auth()->user()->is_admin == 1)
                   <li class="nav-item active text-warning">
                     <a class="nav-link" href="{{ route('rehearsal.index') }}">Ensaios </a>
@@ -42,6 +42,10 @@
                   <li class="nav-item active text-warning">
                     <a class="nav-link" href="{{ route('users.index') }}">Usuários </a>
                   </li>
+                  <li class="nav-item active text-warning">
+                    <a class="nav-link" href="{{ route('contact.show') }}">Mensagens </a>
+                  </li>
+
                 @endif
               </ul>  
             </div>  
