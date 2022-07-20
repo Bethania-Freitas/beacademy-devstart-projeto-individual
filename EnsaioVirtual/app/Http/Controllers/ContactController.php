@@ -26,6 +26,8 @@ class ContactController extends Controller
         $contact->email = $request->email;
         $contact->tel = $request->tel;
         $contact->messageClient = $request->messageClient;
+        $contact->read = $request->read;
+        $contact->answered = $request->answered;
         $contact->save();
 
         return redirect()->route('contact.index')->with('edit', 'Obrigado pelo contato!! 😁');

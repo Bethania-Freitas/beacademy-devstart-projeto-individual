@@ -16,4 +16,9 @@ class Contact extends Model
         'messageClient',
     ];
     protected $table = "contacts";
+
+    protected $attributes = [
+        'read' => 0,
+        'answered' => 0,
+    ];
 }

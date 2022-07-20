@@ -4,7 +4,7 @@
 
 <div class="container">
     <h1>Mensagens dos Usuários:</h1>
-            @foreach($contact as $contact)
+            @foreach ($contact->reverse() as $contact)
                 <div class="card">
                     <div class="card-body">
                         <div class="row justify-content-center">
@@ -16,11 +16,11 @@
                             </div>
                             <div class="col-2">                      
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                                    <label class="form-check-label" for="flexSwitchCheckDefault"> Lida</label>
+                                    <input class="form-check-input" type="checkbox" role="switch" name="read" id="answered" value="0">
+                                    <label class="form-check-label" for="flexSwitchCheckDefault">Lida</label>
                                  </div>
                                  <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                    <input class="form-check-input" type="checkbox" role="switch" name="answered" id="answered" value="0">
                                     <label class="form-check-label" for="flexSwitchCheckDefault">Respondida</label>
                                 </div>
                             </div>
