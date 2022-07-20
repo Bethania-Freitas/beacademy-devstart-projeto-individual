@@ -4,9 +4,26 @@
 
 <div class="container">
     <h1>Contato</h1>
+
+    @if($errors->any())
+        <div class="alert alert-danger" role="alert">
+            @foreach($errors->all() as $error)
+                {{ $error }}<br>
+            @endforeach
+        </div>
+    @endif
+
+    @if(session()->has('index'))
+        <div class="alert alert-dark alert-dismissible fade show" role="alert">
+            <strong>Atenção!</strong> {{ session()->get('index') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif  
+
     <div class="row justify-content-center">
         <div class="col-6">
-            <form action="" method="get">
+            <form action="{{ route('contact.store') }}" method="POST">
+                @csrf
                 <div class="form-label">       
                     <label for="">Digite seu nome:</label><br>
                     <input class="form-control"  type="text" name="name" id="name" required>
@@ -21,7 +38,7 @@
                 </div>
                 <div class="form-label">   
                     <label for="">Deixe seu recado:</label><br>
-                    <textarea class="form-control" name="" id="" cols="30" rows="10" required></textarea>
+                    <textarea class="form-control" name="messageClient" id="messageClient" cols="30" rows="10" required></textarea>
                 </div>
                 <div>
                     <button class="btn btn-dark" type="submit">Enviar</button>

@@ -39,7 +39,6 @@ class RehearsalController extends Controller
         $this->model->create($data);
 
         return redirect()->route('rehearsal.index')->with('edit', 'Ensaio agendado com sucesso! 😁');
-
     }
 
     public function edit($id)

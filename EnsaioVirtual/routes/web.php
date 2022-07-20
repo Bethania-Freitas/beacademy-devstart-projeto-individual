@@ -17,7 +17,9 @@ Route::get('/', function () {
 });
 
 Route::get('/show', [\App\Http\Controllers\ShowController::class, 'index'])->name('show.index');
-Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'index'])->name('contact.index');
+
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::post('contact', [ContactController::class, 'store'])->name('contact.store');
 
 Route::middleware(['auth'])->group(function() {
     Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
