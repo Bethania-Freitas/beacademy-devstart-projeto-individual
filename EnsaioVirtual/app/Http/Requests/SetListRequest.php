@@ -26,7 +26,8 @@ class SetListRequest extends FormRequest
         return [
             'Musica' => 'required',
             'Interprete' => 'required',
-            'Link'=> 'required',
+            'Link'=> 'required',             
+               
         ];
     }
 
@@ -38,4 +39,5 @@ class SetListRequest extends FormRequest
             
         ];
     }
+
 }

@@ -13,9 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('contacts', function (Blueprint $table) {
-            $table->boolean('read')->nullable();
-            $table->boolean('answered')->nullable();
+        Schema::create('setlists', function (Blueprint $table) {
+            $table->id();
+            $table->string('Musica');
+            $table->string('Interprete');
+            $table->string('Link');
+            $table->timestamps();
+
         });
     }
 
@@ -26,9 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('contacts', function (Blueprint $table) {
-            $table->dropColumn('read');
-            $table->dropColumn('answered');
-        });
+        Schema::dropIfExists('setlists');
     }
 };

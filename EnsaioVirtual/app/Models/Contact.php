@@ -17,8 +17,4 @@ class Contact extends Model
     ];
     protected $table = "contacts";
 
-    protected $attributes = [
-        'read' => 0,
-        'answered' => 0,
-    ];
 }

@@ -20,9 +20,11 @@ Route::get('/', function () {
 Route::get('/show', [\App\Http\Controllers\ShowController::class, 'index'])->name('show.index');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
-Route::post('contact', [ContactController::class, 'store'])->name('contact.store');
 
-Route::middleware(['auth'])->group(function() {
+
+
+
+Route::middleware(['auth'])->group(function() {  
     Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
     Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
     Route::post('/user', [UserController::class, 'store'])->name('users.store');
@@ -30,7 +32,7 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
     Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
     Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
-    
+
     Route::delete('/show/{id}', [ShowController::class, 'destroy'])->name('show.destroy');
     Route::get('/show/{id}/edit', [ShowController::class, 'edit'])->name('show.edit');
     Route::put('/show/{id}', [ShowController::class, 'update'])->name('show.update');
@@ -54,9 +56,8 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/rehearsal/create', [\App\Http\Controllers\RehearsalController::class, 'create'])->name('rehearsal.create');
     Route::get('/rehearsal/{id}', [\App\Http\Controllers\RehearsalController::class, 'show'])->name('rehearsal.show');
     
-    Route::get('file', [FileController::class, 'index'])->name('file');
-    Route::post('file', [FileController::class, 'store'])->name('file.store');
 
+    Route::post('contact', [ContactController::class, 'store'])->name('contact.store');
     Route::get('/contact/show', [ContactController::class, 'show'])->name('contact.show');
 });
 

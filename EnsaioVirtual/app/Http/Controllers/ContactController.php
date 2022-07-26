@@ -26,18 +26,25 @@ class ContactController extends Controller
         $contact->email = $request->email;
         $contact->tel = $request->tel;
         $contact->messageClient = $request->messageClient;
-        $contact->read = $request->read;
-        $contact->answered = $request->answered;
         $contact->save();
 
-        return redirect()->route('contact.index')->with('edit', 'Obrigado pelo contato!! 😁');
+       
+        return redirect()->route('contact.index')->with( 'Obrigado pelo contato!! 😁');
     }
     
     public function show()
     {
-        $contact = Contact::paginate(5);
+        $contacts = contact::paginate(7);
 
-        return view('contact.show', compact('contact'));
+        return view('contact.show', compact('contacts'));
     }
+
+    public function destroy($id)
+    {
+        Contact::FindOrFail($id)->delete();
+
+        return view('contact.show');
+    }
+
 
 }

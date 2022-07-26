@@ -45,8 +45,9 @@ class UserController extends Controller
         $data = $request->all();
         $data['password'] = bcrypt($request->password);
 
+
         if ($request->image) {
-            $data['image'] = $request->image->store('users');
+            $data['image'] = $request->image->store('profile', 'public');
         }
 
         $this->model->create($data);
@@ -58,6 +59,7 @@ class UserController extends Controller
     {
         if(!$user = $this->model->find($id))
             return redirect()->route('users.index'); 
+        
 
         return view('users.edit', compact('user')); 
     }

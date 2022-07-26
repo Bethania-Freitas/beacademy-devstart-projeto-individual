@@ -25,8 +25,8 @@ class SetlistController extends Controller
 
     public function show($id)
     {
-        $setlist = Setlist::buscarSetlistComLyrics($id);
-
+        $setlist = Setlist::findOrFail($id);
+        
         return view('setlist.show', compact('setlist'));
     }
 
