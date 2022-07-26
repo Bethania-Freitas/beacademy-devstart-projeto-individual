@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RehearsalController;
 use App\Http\Controllers\ShowController;
 use App\Http\Controllers\SetlistController;
-use App\Http\Controllers\FileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Models\Contact;
