@@ -24,7 +24,7 @@
           <div class="row">
             <div class="col-10">
               <ul class="navbar-nav mr-auto">
-                <img class="me-5"src="/Icons/5j.png" alt="" width="40" height="40">
+                <img class="me-5"src="/icons/5j.png" alt="" width="40" height="40">
                 <a class="navbar-brand text-warning" href="/">Home</a>
                   <li class="nav-item active">
                     <a class="nav-link" href="{{ route('show.index') }}">Próximos Shows </a>
