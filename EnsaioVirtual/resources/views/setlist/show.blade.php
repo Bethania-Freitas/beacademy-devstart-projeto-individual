@@ -21,7 +21,7 @@
                     <td>{{ $setlist->Musica }}</td>
                     <td>{{ $setlist->Interprete }}</td>
                     <td>
-                        <a href="{{ $setlist->Link }}" class="btn btn-dark">Video</a>                    
+                        <a href="{{ $setlist->Link }}" class="btn btn-dark" target="_blank">Video</a>                    
                     </td>
                     <td><a href="{{ route('setlist.edit', $setlist->id) }}" class="btn btn-warning text-white">Editar</a></td>
                     <td>

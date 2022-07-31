@@ -24,7 +24,7 @@
           <div class="row">
             <div class="col-10">
               <ul class="navbar-nav mr-auto">
-                <img class="me-5"src="/icons/5j.png" alt="" width="40" height="40">
+                <img class="me-5"src="{{ asset('/icons/5j.png') }}" alt="" width="40" height="40">
                 <a class="navbar-brand text-warning" href="/">Home</a>
                   <li class="nav-item active">
                     <a class="nav-link" href="{{ route('show.index') }}">Próximos Shows </a>
@@ -85,16 +85,16 @@
           <div class="row">
             <div class="col-10">
               <ul class="navbar-nav mr-auto">
-                <a class="navbar-brand" href="https://www.facebook.com/quintajustaoficial">
+                <a class="navbar-brand" href="https://www.facebook.com/quintajustaoficial" target="_blank">
                   <img src="/Icons/facebook.svg" alt="" width="30" height="24">
                 </a>
-                <a class="navbar-brand" href="https://www.instagram.com/quintajustaoficial/">
+                <a class="navbar-brand" href="https://www.instagram.com/quintajustaoficial/" target="_blank">
                   <img src="/Icons/instagram.svg" alt="" width="30" height="24">
                 </a>
-                <a class="navbar-brand" href="https://www.youtube.com/user/BezinhaFreitas/videos">
+                <a class="navbar-brand" href="https://www.youtube.com/user/BezinhaFreitas/videos" target="_blank">
                   <img src="/Icons/youtube.svg" alt="" width="30" height="24">
                 </a>
-                <a class="navbar-brand" href="https://soundcloud.com/quintajustaofficial">
+                <a class="navbar-brand" href="https://soundcloud.com/quintajustaofficial" target="_blank">
                   <img src="/Icons/Cloud.svg" alt="" width="30" height="24">
                 </a>                 
               </ul>

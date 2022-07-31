@@ -52,7 +52,7 @@
                    @if($user->image)
                         <th><img src="{{ asset('/storage/'.$user->image) }}" width="50px" height="50px" class="rounded-circle" alt=""></th>
                    @else
-                       <th><img src="/icons/avatar.jpg" width="50px" height="50px" class="rounded-circle" alt=""></th>
+                       <th><img src="{{ asset('/icons/avatar.jpg') }}" width="50px" height="50px" class="rounded-circle" alt=""></th>
                    @endif
                     <td>{{ $user->name }}</td>
                    <td>{{ $user->email }}</td>
