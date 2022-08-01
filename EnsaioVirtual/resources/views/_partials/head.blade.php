@@ -32,9 +32,6 @@
                   <li class="nav-item active text-warning">
                     <a class="nav-link" href="{{ route('contact.index') }}">Contato </a>
                   </li>
-                  <li class="nav-item active text-warning">
-                    <a class="nav-link" href="{{ route('users.index') }}">Usuários </a>
-                  </li>
                 @if(Auth()->check() && auth()->user()->is_admin == 1)
                   <li class="nav-item active text-warning">
                     <a class="nav-link" href="{{ route('rehearsal.index') }}">Ensaios </a>
