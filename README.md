@@ -24,9 +24,17 @@ Senha: 12345678
 
 
 ----------------------------------------
-## Screenshot
+## Screenshots
 
 ![AppScreenshot](https://github.com/Bethania-Freitas/beacademy-devstart-projeto-individual/blob/main/print_inicial.png)
+
+![AppScreenshot](https://github.com/Bethania-Freitas/beacademy-devstart-projeto-individual/blob/main/print2.png)
+
+![AppScreenshot](https://github.com/Bethania-Freitas/beacademy-devstart-projeto-individual/blob/main/print3.png)
+
+![AppScreenshot](https://github.com/Bethania-Freitas/beacademy-devstart-projeto-individual/blob/main/print4.png)
+
+![AppScreenshot](https://github.com/Bethania-Freitas/beacademy-devstart-projeto-individual/blob/main/print5.png)
 
 
 
